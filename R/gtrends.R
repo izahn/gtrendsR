@@ -199,16 +199,16 @@ gtrends <- function(
   
   if(!onlyInterest){
     interest_by_region <- interest_by_region(widget, comparison_item, low_search_volume,tz)
-    related_topics <- related_topics(widget, comparison_item, hl,tz)
-    related_queries <- related_queries(widget, comparison_item,tz,hl)
+    #related_topics <- related_topics(widget, comparison_item, hl,tz)
+    #related_queries <- related_queries(widget, comparison_item,tz,hl)
     res <- list(
       interest_over_time = interest_over_time,
       interest_by_country = do.call(rbind, interest_by_region[names(interest_by_region) == "country"]),
       interest_by_region = do.call(rbind, interest_by_region[names(interest_by_region) == "region"]),
       interest_by_dma = do.call(rbind, interest_by_region[names(interest_by_region) == "dma"]),
-      interest_by_city = do.call(rbind, interest_by_region[names(interest_by_region) == "city"]),
-      related_topics = related_topics,
-      related_queries = related_queries
+      interest_by_city = do.call(rbind, interest_by_region[names(interest_by_region) == "city"])#,
+      #related_topics = related_topics,
+      #related_queries = related_queries
     )
   }else{
     res <- list(interest_over_time = interest_over_time)
