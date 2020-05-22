@@ -59,7 +59,7 @@ get_countries <- function() {
     sub_code = paste(
       "US",
       lapply(regmatches(usa$Metro, regexec(", (\\S{2})", usa$Metro)), "[", 2),
-      usa$`Metro code`,
+      usa$`Metro code...11`,
       sep = "-"
     )
   )
